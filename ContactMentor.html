@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Mentor</title>
+    <style>
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/DashBoard.jpg);
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+            background-position: center;
+            position: relative;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px left;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: flex-start; /* Align content to the top */
+        }
+        .mentor-list {
+            list-style-type: none;
+            font-size: x-large;
+            color: black;
+            padding: 0;
+            margin-right: 20px; /* Add some margin to the right for spacing */
+        }
+        .mentor-list li {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .mentor-list li:hover {
+            background-color: #f0f0f0;
+        }
+        .chat-box {
+            flex: 1; /* Take up remaining space */
+            display: none; /* Initially hide the chat box */
+            margin-left: 10%;
+        }
+        .chat-box-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .chat-box-content {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 1px;
+            background-color: #f9f9f9;
+        }
+        .chat-box input[type="text"] {
+            width: calc(100% - 10px); /* Adjust width to account for padding */
+            margin-top: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .mentor-navbar {
+            background-color: #333;
+            padding: 10px;
+            color: #fff;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+        }
+        .mentor-navbar ul {
+            list-style-type: none;
+             padding: 0;
+             margin: 0;
+             display: flex;
+             flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="mentor-navbar">
+    <div class="container">
+        <ul class="mentor-list">
+            <li onclick="toggleChat('mentor1')">Mentor 1</li>
+            <li onclick="toggleChat('mentor2')">Mentor 2</li>
+            <!-- Add more mentors as needed -->
+        </ul>
+    </nav>
+        <div class="chat-box" id="mentorChat">
+            <div class="chat-box-header">Chat with Mentor</div>
+            <div class="chat-box-content" id="mentorChatContent"></div>
+            <input type="text" placeholder="Type your message..." id="chatMessage">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat(mentor) {
+            const chatBox = document.getElementById('mentorChat');
+            const currentDisplay = chatBox.style.display;
+
+            // Hide all chat boxes
+            const allChatBoxes = document.querySelectorAll('.chat-box');
+            allChatBoxes.forEach(box => {
+                box.style.display = 'none';
+            });
+
+            // Toggle the chat box for the selected mentor
+            if (currentDisplay === 'block' || currentDisplay === '') {
+                chatBox.style.display = 'none';
+            } else {
+                chatBox.style.display = 'block';
+                // Update chat box header with mentor's name
+                document.querySelector('.chat-box-header').innerText = `Chat with ${mentor}`;
+            }
+        }
+
+        function sendMessage() {
+            const message = document.getElementById('chatMessage').value;
+            const chatContent = document.getElementById('mentorChatContent');
+            const newMessage = document.createElement('div');
+            newMessage.innerText = message;
+            chatContent.appendChild(newMessage);
+            // Clear input field after sending message
+            document.getElementById('chatMessage').value = '';
+        }
+    </script>
+</body>
+</html>

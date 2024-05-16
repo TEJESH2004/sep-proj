@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Looker Studio Dashboard</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; 
+
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/DashBoard.jpg);
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+        background-position: center;
+        position: relative;
+
+        }
+        .back-link {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .back-link img {
+            width: 1cm; 
+            height: auto; 
+        }
+        iframe {
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="home.html" class="back-link"><img src="images\backnav.png" alt="Back to Homepage"></a>
+    <!-- Paste the Looker Studio embed code here -->
+    <iframe width="1200" height="900" src="https://lookerstudio.google.com/embed/reporting/4ba0f8fe-477a-4939-a74c-0498070b533a/page/GPB0D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+</body>
+</html>

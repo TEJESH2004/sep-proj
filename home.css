@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/DashBoard.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    position: relative;
+}
+/* logo */
+.hello {
+    position: fixed;
+    height: auto;
+    left: 0px;
+    margin: 10px;
+    width: 100px;
+    top: 0.1%;
+}
+/* Menu-Bar */
+.side-nav{
+    width: 70px;
+    height: 71%;
+    position: fixed;
+    margin-top: 140px;
+    left: 0;
+    padding: 2px 15px;
+    background: rgba(200, 192, 192, 0.756);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: width 0.5s;
+    padding-left: 0.6rem;
+    padding: 0.5rem;
+    margin-left: 15px;
+    
+}
+ul{
+    list-style: none;
+    margin-right: 30px;
+}
+ul li{
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 19px;
+}
+ul li img{
+    width: 20px;
+    margin-right: 10px;
+}
+ul li p{
+    white-space: nowrap;
+    margin-top: 15px;
+    display: none;
+}
+.side-nav:hover{
+    width: 240px;
+}
+.side-nav:hover ul li p{
+    display: block;
+}
+.side-nav:hover ul li img{
+    margin-right: 10px;
+}
+.side-nav:hover ul li{
+    justify-content: flex-start;
+}
+.world{
+    height: 25px;
+    
+}
+
+.logo h1{
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 5px;
+   
+}
+.offcanvas-body{
+    font-size: 18px;
+}
+.navbar {
+    background-color: #fff;
+    height: 60px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+    margin-left: 140px;
+    margin-right: 40px;
+    box-shadow: 0 0 10px #000;
+    background: rgba(200, 192, 192, 0.756);
+
+}
+/*Nav-bar*/
+.navbar-brand {
+    font-weight: 500;
+    color: black;
+    font-size: 55px;
+    transition: 0.3s color;
+
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.55rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+.nav-link active{
+    padding-left: 20px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: rgba(200, 192, 192, 0.756);
+    padding: 10px 15px;
+    border-bottom: 2px solid rgba(220, 20, 60, 0.458);
+}
+
+@media (min-width: 991px) {
+.nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before,
+    .nav-link.kactive::before {
+        width: 100;
+        visibility: visible;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.featured-companies h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+   color: #ffffff; 
+    
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    width: 30px; 
+    height: 200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 75%; /* Adjusted to fit within its container */
+    margin: 40px auto; /* Centered horizontally */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+
+
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 0.25s;
+    animation-name: fade;
+    animation-duration: 0.25s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}

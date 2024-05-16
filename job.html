@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Name Display</title>
+  <link rel="stylesheet" type="text/css" href="job.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      position: relative;
+    }
+
+    .search-bar {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+    }
+
+    .search-input {
+      width: calc(100% - 40px); /* Adjust width to account for icon and image */
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px; 
+      font-size: 16px;
+    }
+
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      right: 30px; /* Adjust the position to accommodate the image */
+      transform: translateY(-50%);
+      color: #999;
+      cursor: pointer;
+    }
+    .search-image {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+
+    .search-icon:hover {
+      color: #666;
+    }
+
+    .details {
+      display: none;
+      background: #f9f9f9;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      max-width: 300px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .details h3 {
+      margin-top: 0;
+    }
+
+    .details p {
+      margin-bottom: 10px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .button-container button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .button-container button:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>JOB AVAILABILITY</h1>
+  <div class="search-bar">
+    <input type="search" id="name" name="name" class="search-input" placeholder="Search...">
+    <i class="fas fa-search search-icon"></i>
+    <img src="C:\Users\tejut\OneDrive\Desktop\placement dashboard\images\search.png" alt="Your Image" class="search-image">
+  </div>
+  
+  <div id="result"></div>
+
+  <div id="detailsContainer" class="details"></div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script>
+    const names = ["Microsoft Corporation", "Accenture", "Cognizant","Infosys","TCS: Tata Consultancy Services"];
+    const resultDiv = document.querySelector('#result');
+    const searchInput = document.querySelector('#name');
+    const detailsContainer = document.querySelector('#detailsContainer');
+
+    function searchName() {
+      const searchTerm = searchInput.value.toLowerCase();
+
+      resultDiv.innerHTML = '';
+
+      names.forEach(name => {
+        const nameElement = document.createElement('p');
+        nameElement.textContent = name;
+
+        if (name.toLowerCase().includes(searchTerm)) {
+          nameElement.classList.add('highlight');
+          nameElement.addEventListener('click', () => showDetails(name));
+        }
+
+        resultDiv.appendChild(nameElement);
+      });
+    }
+
+    function showDetails(name) {
+      let details = "";
+      if (name === "Microsoft Corporation") {
+        details = `<h3>${name}</h3>
+          <h3>Role:</h3>
+          <p>
+            Software Engineer
+            Product Manager
+            Data Scientist
+            Cloud Solutions Architect
+            Business Development Manager
+          </p>
+          <h3>Skills:</h3>
+          <p>
+            Programming languages (e.g., C#, Java, Python)
+            Cloud computing (Azure)
+            Data analysis and visualization
+            Machine learning and AI
+            Product management and development
+          </p>`;
+      } else if (name === "Accenture"){
+        details = `<h3>${name}</h3>
+          <h3>Role:</h3>
+          <p>
+            Management Consultant
+            Technology Consultant
+            Project Manager
+            Business Analyst
+            Cybersecurity Analyst
+          </p>
+          <h3>Skills:</h3>
+          <p>
+            Business strategy and consulting
+            Technology implementation and integration
+            Project management methodologies (e.g., Agile, Scrum)
+            Data analysis and reporting
+            Cybersecurity practices
+          </p>`;
+      }
+      else if (name === "Cognizant"){
+        details = `<h3>${name}</h3>
+          <h3>Role:</h3>
+          <p>
+            Software Engineer
+            Quality Assurance Analyst
+            IT Consultant
+            Business Analyst
+            Data Engineer
+          </p>
+          <h3>Skills:</h3>
+          <p>
+            Software development (Java, .NET, Python)
+            Quality assurance and testing
+            IT consulting and solution architecture
+            Business process analysis and optimization
+            Data engineering and database management
+          </p>`;
+      }
+      else if (name === "Infosys"){
+        details = `<h3>${name}</h3>
+          <h3>Role:</h3>
+          <p>
+            Systems Engineer
+            Software Developer
+            Business Process Consultant
+            Data Analyst
+            Technical Support Engineer
+          </p>
+          <h3>Skills:</h3>
+          <p>
+            Systems programming (C, C++)
+            Web development (HTML, CSS, JavaScript)
+            Business process consulting
+            Data analysis and reporting tools (SQL, Tableau)
+            Technical support and troubleshooting
+          </p>`;
+      }
+      else if (name === "TCS: Tata Consultancy Services"){
+        details = `<h3>${name}</h3>
+          <h3>Role:</h3>
+          <p>
+            IT Consultant
+            Software Engineer
+            Data Scientist
+            Network Administrator
+            Project Manager
+          </p>
+          <h3>Skills:</h3>
+          <p>
+            IT consulting and solution design
+            Software development (Java, Python, .NET)
+            Data science and analytics
+            Network management and cybersecurity
+            Project management methodologies (Agile, Waterfall)
+          </p>`;
+      }
+      else {
+        details = `<h3>${name}</h3><p>No details available.</p>`;
+      }
+      details += `
+        <div class="button-container">
+          <button onclick="apply()">Apply</button>
+          <button onclick="cancel()">Cancel</button>
+        </div>`;
+      detailsContainer.innerHTML = details;
+      detailsContainer.style.display = 'block';
+    }
+
+    function apply() {
+      // Code for applying
+      alert("You applied for this job!");
+    }
+
+    function cancel() {
+      detailsContainer.style.display = 'none';
+    }
+
+    searchInput.addEventListener('input', searchName);
+    searchInput.addEventListener('submit', e => {
+      e.preventDefault();
+      searchName();
+    });
+  </script>
+</body>
+</html>

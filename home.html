@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Portal</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--logo-->
+    <div class="background">
+        <div class="container">
+            <img class="hello" src="images/cutmlogo.webp">
+        </div>
+        <!--side Menu bar-->
+        <div class="header">
+            <div class="side-nav">
+                <ul>
+                    <li><a href="home.html"><img class="world" src="images/home.png"><p>Home</p></a></li>
+                    <li><a href="announcement(std).html"><img class="world" src="images/megaphone.png"><p>Announcements</p></a></li>
+                    <li><a href="ContactMentor.html"><img class="world" src="images/mentor.png"><p>Contact Mentor</p></a></li>
+                    <li><a href="job.html"><img class="world" src="images/job.png"><p>Job Availabilities</p></a></li>
+                    <li><a href="dash.html"><img class="world" src="images/dashboard.png"><p>Dashboard</p></a></li>
+                    <li><a href="#"><img class="world" src="images/logout.png"><p>Logout</p></a></li>
+                </ul>
+            </div>
+        </div>
+        <!--side Menu bar END-->
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="logo"><h1>Placement Dashboard</h1></div>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Placement Dashboard</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="announcement(std).html">Announcements</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="ContactMentor.html">Contact Mentor</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="job.html">Job Availabilities</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous">
+        </script>
+         </div>
+         <!--slideshow -->
+         <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="images/companies.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/glassbuild.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="images/slide3.jpg" style="width:100%">
+            </div>
+        
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        
+        <!-- Dots/bullets/indicators -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+        
+        
+        
+         
+             <!-- Featured Companies Section -->
+             <div class="featured-companies container mt-5">
+                 <h2>Featured Companies</h2>
+                 <div class="row grid">
+                     <div class="col-md-4 mb-4 grid-item">
+                         <div class="card">
+                             <img src="images/google.png" class="card-img-top" alt="Google">
+                             <div class="card-body">
+                                 <h5 class="card-title">Google</h5>
+                                 <p class="card-text">Description of Google.</p>
+                                 <a href="https://careers.google.com/stories/applying-to-google/" class="btn btn-primary">Visit Website</a>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-md-4 mb-4 grid-item">
+                         <div class="card">
+                             <img src="images/microsoft.png" class="card-img-top" alt="Microsoft">
+                             <div class="card-body">
+                                 <h5 class="card-title">Microsoft</h5>
+                                 <p class="card-text">Description of Microsoft.</p>
+                                 <a href="https://careers.microsoft.com/v2/global/en/home.html" class="btn btn-primary">Visit Website</a>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-md-4 mb-4 grid-item">
+                         <div class="card">
+                             <img src="images/aws.png" class="card-img-top" alt="Amazon">
+                             <div class="card-body">
+                                 <h5 class="card-title">Amazon</h5>
+                                 <p class="card-text">Description of Amazon.</p>
+                                 <a href="https://aws.amazon.com/careers/" class="btn btn-primary">Visit Website</a>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-md-4 mb-4 grid-item">
+                         <div class="card">
+                             <img src="images/tcs.png" class="card-img-top" alt="TCS">
+                             <div class="card-body">
+                                 <h5 class="card-title">TCS</h5>
+                                 <p class="card-text">Description of TCS.</p>
+                                 <a href="https://www.tcs.com/careers" class="btn btn-primary">Visit Website</a>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-md-4 mb-4 grid-item">
+                         <div class="card">
+                             <img src="images/accenture.png" class="card-img-top" alt="Accenture">
+                             <div class="card-body">
+                                 <h5 class="card-title">Accenture</h5>
+                                 <p class="card-text">Description of Accenture.</p>
+                                 <a href="https://www.accenture.com/in-en/careers" class="btn btn-primary">Visit Website</a>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-md-4 mb-4 grid-item">
+                         <div class="card">
+                             <img src="images/ibm.png" class="card-img-top" alt="IBM">
+                             <div class="card-body">
+                                 <h5 class="card-title">IBM</h5>
+                                 <p class="card-text">Description of IBM.</p>
+                                 <a href="https://www.ibm.com/in-en/careers" class="btn btn-primary">Visit Website</a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         
+             <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
+            
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+            
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+            
+                function showSlides(n) {
+                    let i;
+                    let slides = document.getElementsByClassName("mySlides");
+                    let dots = document.getElementsByClassName("dot");
+                    if (n > slides.length) {slideIndex = 1}    
+                    if (n < 1) {slideIndex = slides.length}
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";  
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex-1].style.display = "block";  
+                    dots[slideIndex-1].className += " active";
+                }
+            </script>
+             
+            
+         </body>
+         </html>
+         
+    

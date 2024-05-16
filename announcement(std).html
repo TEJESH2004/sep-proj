@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements</title>
+    <style>
+        /* CSS styles remain unchanged */
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/DashBoard.jpg);
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            height: 100vh;
+            width: 100%;
+            background-position: center;
+            position: relative;
+
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .announcement {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        .announcement h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .announcement p {
+            margin: 0;
+        }
+        .back-link {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .back-link img {
+            width: 1cm; 
+            height: auto; 
+        }
+        /* Style for search input */
+        .search-input {
+            padding: 8px 30px 8px 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            font-size: 16px;
+            margin-bottom: 10px;
+            width: calc(100% - 40px); /* Adjust width to accommodate search icon */
+        }
+        /* Style for custom search icon */
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            width: 24px; /* Set the width of the icon */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+
+<body>
+    <a href="home.html" class="back-link"><img src="images\backnav.png" alt="Back to Homepage"></a>
+    <div class="container">
+        <!-- Search Box with Custom Icon -->
+        <div style="position: relative;">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search Announcements">
+            <img src="images\search.png" alt="Search" class="search-icon"> <!-- Custom search icon -->
+        </div>
+        <!-- Announcement List (for students) -->
+        <h2>Announcements</h2>
+        <div class="announcement" id="announcementList">
+            <h3>Important Announcement</h3>
+            <p>imp announcement.</p>
+        </div>
+        <div class="announcement">
+            <h3>Upcoming Event</h3>
+            <p>up coming events.</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for search functionality remains unchanged
+        const searchInput = document.getElementById('searchInput');
+        const announcementList = document.getElementById('announcementList');
+
+        searchInput.addEventListener('input', function () {
+            const searchTerm = searchInput.value.toLowerCase();
+            const announcements = announcementList.querySelectorAll('.announcement');
+
+            announcements.forEach(announcement => {
+                const announcementText = announcement.textContent.toLowerCase();
+                if (announcementText.includes(searchTerm)) {
+                    announcement.style.display = 'block';
+                } else {
+                    announcement.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
