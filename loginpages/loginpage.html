@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin and Student Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="header">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="toggleForm('admin')">Admin</button>
+                <button type="button" class="toggle-btn" onclick="toggleForm('student')">Student</button>
+            </div>
+            <form id="admin-login-form" class="input-group" action="admin_login.php" method="POST">
+                <input type="text" name="username" placeholder="Enter Admin Username" required>
+                <input type="password" name="password" placeholder="Enter Admin Password" required>
+                <button class="btn" type="submit">Login</button>
+            </form>
+            <form id="student-login-form" class="input-group" action="student_login.php" method="POST" style="display: none;">
+                <input type="text" name="username" placeholder="Enter Student Username" required>
+                <input type="password" name="password" placeholder="Enter Student Password" required>
+                <button class="btn" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    function toggleForm(type) {
+        if (type === 'admin') {
+            document.getElementById('admin-login-form').style.display = 'block';
+            document.getElementById('student-login-form').style.display = 'none';
+        } else {
+            document.getElementById('admin-login-form').style.display = 'none';
+            document.getElementById('student-login-form').style.display = 'block';
+        }
+    }
+</script>
+</html>
