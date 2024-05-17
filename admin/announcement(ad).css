@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.announcement-form {
+    margin-bottom: 20px;
+}
+.announcement-form h2 {
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+.announcement-form input[type="text"],
+.announcement-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.announcement-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.announcement-form input[type="submit"]:hover {
+    background-color: red;
+}
+.announcement-list {
+    list-style-type: none;
+    padding: 0;
+}
+.announcement {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+.back-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.back-link img {
+    width: 1cm; 
+    height: auto; 
+}
